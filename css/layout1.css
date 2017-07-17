@@ -65,7 +65,8 @@ img {
     opacity: 0;
     transform: translateX(20px);
     transition: all 0.3s ease-in-out;
-    overflow: hidden; }
+    overflow: hidden;
+    cursor: pointer; }
     .clothes-pics figure.is-showing {
       opacity: 1;
       transform: translateX(0px); }
@@ -90,10 +91,30 @@ img {
 .large-window {
   height: 640px;
   background-image: url(../images/model2.jpg);
-  background-position: top center;
-  background-repeat: no-repeat;
+  background-position: center 0px;
+  background-repeat: repeat-y;
   background-attachment: fixed;
   margin-top: 100px;
-  border-radius: 50%; }
+  border-radius: 50%;
+  position: relative; }
+
+.window-tint {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.promo-text {
+  color: white;
+  font-weight: 100;
+  font-size: 50px; }
+  .promo-text strong {
+    display: block; }
 
 /*# sourceMappingURL=layout1.css.map */

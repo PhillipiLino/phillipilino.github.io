@@ -53,6 +53,35 @@ $(window).scroll(function() {
 
 	}
 
+
+	var imgArray = ['images/costas.png', 'images/perfil.png', 'images/tres_quartos.png', 'images/frente.png'];
+
+	if(wScroll > $('.avatar').offset().top - $(window).height() + 600
+		&& wScroll < $('.avatar').offset().top - $(window).height() + 700){
+
+		$('.avatar').css({
+			'background-image': 'url('+imgArray[1]+')'
+		});
+
+	} else if(wScroll > $('.avatar').offset().top - $(window).height() + 700
+		&& wScroll < $('.avatar').offset().top - $(window).height() + 800){
+
+		$('.avatar').css({
+			'background-image': 'url('+imgArray[2]+')'
+		});
+
+	} else if(wScroll > $('.avatar').offset().top - $(window).height() + 800){
+
+		$('.avatar').css({
+			'background-image': 'url('+imgArray[3]+')'
+		});
+
+	} else {
+		$('.avatar').css({
+			'background-image': 'url('+imgArray[0]+')'
+		});
+	}
+
 });
 
 

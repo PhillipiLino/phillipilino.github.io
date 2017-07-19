@@ -37,7 +37,12 @@ img {
     font-size: 12px;
     line-height: 1.428571429;
     border-radius: 15px;
-    outline: none !important; }
+    outline: none !important;
+    background-color: black; }
+    .side-menu .btn-circle:hover {
+      background-color: white; }
+    .side-menu .btn-circle:focus {
+      background-color: gray; }
 
 .bird-box {
   position: relative;
@@ -84,7 +89,7 @@ img {
   margin-bottom: 100px; }
   .clothes-pics figure {
     margin-bottom: 20px;
-    margin: 0px;
+    margin: 10px;
     position: relative;
     opacity: 0;
     transform: translateX(20px);

@@ -44,7 +44,7 @@ $(window).scroll(function() {
 	}
 
 	if(wScroll > $('.blog-posts').offset().top - $(window).height()){
-
+		// console.log("teste");
 		var offset = Math.min(0, wScroll - $('.blog-posts').offset().top + $(window).height() - 350);
 
 		$('.post-1').css({'transform': 'translate('+ offset +'px, '+ Math.abs(offset * 0.2) +'px)'});
@@ -83,6 +83,10 @@ $(window).scroll(function() {
 		$('.avatar3').css({'opacity': '0'})
 		$('.avatar4').css({'opacity': '0'})
 	}
+
+	$('.side-menu').css({
+			'transform' : 'translate(0px, -'+ wScroll / 15+'%)'
+	});
 
 });
 

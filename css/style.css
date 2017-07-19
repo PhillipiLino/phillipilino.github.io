@@ -875,6 +875,23 @@ figure {
 img {
   max-width: 100%; }
 
+.side-menu {
+  width: 100px;
+  position: fixed;
+  right: 0px; }
+  .side-menu ul {
+    text-decoration: none;
+    list-style: none; }
+  .side-menu .btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+    outline: none !important; }
+
 .bird-box {
   position: relative;
   height: 600px;
@@ -920,6 +937,7 @@ img {
   margin-bottom: 100px; }
   .clothes-pics figure {
     margin-bottom: 20px;
+    margin: 10px;
     position: relative;
     opacity: 0;
     transform: translateX(20px);

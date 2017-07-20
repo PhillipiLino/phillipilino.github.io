@@ -22,6 +22,17 @@ figure {
 img {
   max-width: 100%; }
 
+.code-side {
+  width: 30%;
+  margin-bottom: 400px;
+  position: absolute;
+  background-color: transparent;
+  left: 0px;
+  z-index: 0;
+  overflow: hidden; }
+  .code-side img {
+    margin-top: 10%; }
+
 .side-menu {
   width: 100px;
   position: fixed;
@@ -42,6 +53,8 @@ img {
     .side-menu .btn-circle:hover {
       background-color: white; }
     .side-menu .btn-circle:focus {
+      background-color: gray; }
+    .side-menu .btn-circle .is-active {
       background-color: gray; }
 
 .bird-box {
@@ -95,14 +108,18 @@ img {
     transform: translateX(20px);
     transition: all 0.3s ease-in-out;
     overflow: hidden;
-    cursor: pointer; }
+    cursor: pointer;
+    width: 180px;
+    height: 180px;
+    background-color: red; }
     .clothes-pics figure.is-showing {
       opacity: 1;
       transform: translateX(0px); }
     .clothes-pics figure img {
       display: block;
       transform: scale(1);
-      transition: all 0.3s ease-in-out; }
+      transition: all 0.3s ease-in-out;
+      scale: 100%; }
     .clothes-pics figure:hover figcaption {
       left: 0%; }
     .clothes-pics figure:hover img {

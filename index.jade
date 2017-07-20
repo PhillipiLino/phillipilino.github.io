@@ -13,13 +13,15 @@ html(lang="en")
         //link(rel="icon", type="image/png", href="images/favicon.png")  
 
     body
-        
         header.bird-box
             .back-bird
             .logo
             .fore-bird
 
         section.content
+
+            #code-scroll.code-side
+                img.code-images(v-for="item in items" v-bind:src="item.path" v-bind:blur="item.blur")
 
             .side-menu
                 ul
@@ -30,7 +32,7 @@ html(lang="en")
                     li: a(id="a-rich" href="#rich")
                         button(type="button" id="button-rich" class="btn btn-default btn-circle tooltipped" data-position="left" data-delay="50" data-tooltip="Rich History")
 
-            article
+            article.centro
 
                 h1(id="unique" class="section scrollspy") Unique Style
 
@@ -81,7 +83,7 @@ html(lang="en")
                             figcaption BlackBird Sweater - <strong>$135</strong>
 
                     #test.row.img-row
-                        figure.columns.four(v-for="item in items") 
+                        figure.columns.four(class="responsive-img" v-for="item in items") 
                             img(v-bind:src="item")
 
                 h1(id="fine" class="section scrollspy") Fine Tayloring
@@ -203,7 +205,7 @@ html(lang="en")
                 l = snapshot.val();
                 var lsize = l.lenght;
                 var links = l.slice(1, lsize);
-                console.log(links);
+                //- console.log(links);
                 const app = new Vue({
                         el: '#test',
                         data: {
@@ -212,17 +214,40 @@ html(lang="en")
                     });
             });
 
-            //- const app = new Vue({
-            //-             el: '#test',
-            //-             data: {
-            //-                 items: [
-            //-                   { message: 'Foo' },
-            //-                   { message: 'Bar' }
-            //-                 ]
-            //-               }
-            //-         });
+            function getRandomInt(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
 
-            console.log(l);
+            //- const fs = require('fs');
+            //- fs.readdir("./images/codes", (err, files) => {
+            //-   files.forEach(file => {
+            //-     console.log(file);
+            //-   });
+            //- })
+
+            var code_images_array = ["images/codes/foreach.png", "images/codes/gameObject.png", "images/codes/guiskin.png", "images/codes/int.png", "images/codes/start.png", "images/codes/string.png", "images/codes/update.png", "images/codes/inputStream.png", "images/codes/run.png", "images/codes/try.png", "images/codes/catch.png"]
+
+            var dictImg = {}
+
+            for(var i = 0; i < code_images_array.length; i++){
+                dictImg[i] = code_images_array[i];
+            }
+
+            var vueImages = []
+
+            for(var i = 0; i < 100; i++){
+                vueImages.push({ path : dictImg[getRandomInt(0,code_images_array.length-1)], blur : getRandomInt(0,5)});
+            }
+
+            //- console.log(vueImages);
+
+            const app = new Vue({
+                el: '#code-scroll',
+                data: {
+                    items: vueImages
+                  }
+            });
+            
         
         script(src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous")
         script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous")

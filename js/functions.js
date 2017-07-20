@@ -1,3 +1,12 @@
+$(window).ready(function() {
+	$('.code-images').each(function(i) {
+		var el = $('.code-images').eq(i);
+		el.css({'filter' : 'blur('+ el.attr('blur') +'px)'})
+		// console.log($('.code-images').eq(i).attr('blur'));
+		
+	});
+})
+
 $(window).scroll(function() {
 
 	var wScroll = $(this).scrollTop();
@@ -13,6 +22,11 @@ $(window).scroll(function() {
 	$('.fore-bird').css({
 		'transform' : 'translate(0px, -'+ wScroll / 40 +'%)'
 	})
+
+	$('.code-images').css({
+		'transform' : 'translate(0px, -'+ wScroll / 2 +'%)'
+	})
+
 
 	if(wScroll > $('.clothes-pics').offset().top - ($(window).height() / 1.2)) {
 
@@ -89,25 +103,18 @@ $(window).scroll(function() {
 	});
 
 	if(wScroll >= $('#unique').offset().top - $(window).height() && wScroll < $('#fine').offset().top - $(window).height()){
-		// console.log("unique");
 		$("#button-unique").css({"background-color" : "gray"});
 		$("#button-fine").css({"background-color" : "black"});
 		$("#button-rich").css({"background-color" : "black"});
-		// $("#a-unique").focus();
 	} else if(wScroll >= $('#fine').offset().top - $(window).height() && wScroll < $('#rich').offset().top - $(window).height()){
-		// console.log("fine");
 		$("#button-fine").css({"background-color" : "gray"});
 		$("#button-unique").css({"background-color" : "black"});
 		$("#button-rich").css({"background-color" : "black"});
-		// $("#a-fine").focus();
 
 	} else if (wScroll >= $('#rich').offset().top - $(window).height()){
-		// console.log("rich");
 		$("#button-rich").css({"background-color" : "gray"});
 		$("#button-fine").css({"background-color" : "black"});
 		$("#button-unique").css({"background-color" : "black"});
-		// $("#a-rich").focus();
-
 	}
 
 });

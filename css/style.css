@@ -875,6 +875,17 @@ figure {
 img {
   max-width: 100%; }
 
+.code-side {
+  width: 30%;
+  margin-bottom: 400px;
+  position: absolute;
+  background-color: transparent;
+  left: 0px;
+  z-index: 0;
+  overflow: hidden; }
+  .code-side img {
+    margin-top: 10%; }
+
 .side-menu {
   width: 100px;
   position: fixed;

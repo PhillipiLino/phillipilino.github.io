@@ -9,7 +9,6 @@ figure
 	margin: auto
 
 .content
-
 	position: relative
 	z-index: 2
 	background: white
@@ -24,14 +23,25 @@ figure
 img
 	max-width: 100%
 
+.code-side
+	width: 30%
+	// height: 100%
+	margin-bottom: 400px
+	position: absolute
+	background:
+		color: transparent
+	left: 0px
+	// top: 50%
+	z-index: 0
+	overflow: hidden
+	img
+		margin-top: 10%
+		// filter: blur(5px)
+
 .side-menu
 	width: 100px
 	position: fixed
-	// background:
-	// 	color: rgba(0,0,0,0.5)
 	right: 0px
-	// top: 50%
-	// z-index: 4
 
 	ul
 		text-decoration: none
@@ -120,7 +130,7 @@ img
 		transition: all 0.3s ease-in-out
 		overflow: hidden
 		cursor: pointer
-
+		
 		&.is-showing
 			opacity: 1
 			transform: translateX(0px)

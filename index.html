@@ -18,17 +18,18 @@
       <div class="fore-bird"></div>
     </header>
     <section class="content">
+      <div id="code-scroll" class="code-side"><img v-for="item in items" v-bind:src="item.path" v-bind:blur="item.blur" class="code-images"></div>
       <div class="side-menu">
         <ul>
-          <li><a href="#unique"> 
+          <li><a id="a-unique" href="#unique"> 
               <button type="button" id="button-unique" data-position="left" data-delay="50" data-tooltip="Unique Style" class="btn btn-default btn-circle tooltipped"></button></a></li>
-          <li><a href="#fine">
+          <li><a id="a-fine" href="#fine">
               <button type="button" id="button-fine" data-position="left" data-delay="50" data-tooltip="Fine Tayloring" class="btn btn-default btn-circle tooltipped"></button></a></li>
-          <li><a href="#rich">
+          <li><a id="a-rich" href="#rich">
               <button type="button" id="button-rich" data-position="left" data-delay="50" data-tooltip="Rich History" class="btn btn-default btn-circle tooltipped"></button></a></li>
         </ul>
       </div>
-      <article>
+      <article class="centro">
         <h1 id="unique" class="section scrollspy">Unique Style</h1>
         <hr>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
@@ -68,7 +69,7 @@
             </figure>
           </div>
           <div id="test" class="row img-row">
-            <figure v-for="item in items" class="columns four"> <img v-bind:src="item"></figure>
+            <figure v-for="item in items" class="columns four responsive-img"> <img v-bind:src="item"></figure>
           </div>
         </div>
         <h1 id="fine" class="section scrollspy">Fine Tayloring</h1>
@@ -166,7 +167,7 @@
             l = snapshot.val();
             var lsize = l.lenght;
             var links = l.slice(1, lsize);
-            console.log(links);
+            //- console.log(links);
             const app = new Vue({
                     el: '#test',
                     data: {
@@ -175,17 +176,40 @@
                 });
         });
       
-        //- const app = new Vue({
-        //-             el: '#test',
-        //-             data: {
-        //-                 items: [
-        //-                   { message: 'Foo' },
-        //-                   { message: 'Bar' }
-        //-                 ]
-        //-               }
-        //-         });
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
       
-        console.log(l);
+        //- const fs = require('fs');
+        //- fs.readdir("./images/codes", (err, files) => {
+        //-   files.forEach(file => {
+        //-     console.log(file);
+        //-   });
+        //- })
+      
+        var code_images_array = ["images/codes/foreach.png", "images/codes/gameObject.png", "images/codes/guiskin.png", "images/codes/int.png", "images/codes/start.png", "images/codes/string.png", "images/codes/update.png", "images/codes/inputStream.png", "images/codes/run.png", "images/codes/try.png", "images/codes/catch.png"]
+      
+        var dictImg = {}
+      
+        for(var i = 0; i < code_images_array.length; i++){
+            dictImg[i] = code_images_array[i];
+        }
+      
+        var vueImages = []
+      
+        for(var i = 0; i < 100; i++){
+            vueImages.push({ path : dictImg[getRandomInt(0,code_images_array.length-1)], blur : getRandomInt(0,5)});
+        }
+      
+        //- console.log(vueImages);
+      
+        const app = new Vue({
+            el: '#code-scroll',
+            data: {
+                items: vueImages
+              }
+        });
+        
       
     </script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>

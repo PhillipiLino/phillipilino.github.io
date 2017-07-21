@@ -21,7 +21,7 @@ html(lang="en")
         section.content
 
             #code-scroll.code-side
-                img.code-images(v-for="item in items" v-bind:src="item.path" v-bind:blur="item.blur")
+                img.code-images(v-for="item in items" v-bind:src="item.path" v-bind:blur="item.blur" v-bind:size="item.size")
 
             .side-menu
                 ul
@@ -218,14 +218,7 @@ html(lang="en")
                 return Math.floor(Math.random() * (max - min + 1)) + min;
             }
 
-            //- const fs = require('fs');
-            //- fs.readdir("./images/codes", (err, files) => {
-            //-   files.forEach(file => {
-            //-     console.log(file);
-            //-   });
-            //- })
-
-            var code_images_array = ["images/codes/foreach.png", "images/codes/gameObject.png", "images/codes/guiskin.png", "images/codes/int.png", "images/codes/start.png", "images/codes/string.png", "images/codes/update.png", "images/codes/inputStream.png", "images/codes/run.png", "images/codes/try.png", "images/codes/catch.png"]
+            var code_images_array = ["images/codes/catch.png",  "images/codes/count.png",  "images/codes/foreach.png",  "images/codes/gameObject.png",  "images/codes/getInput.png",  "images/codes/guiskin.png",  "images/codes/inputStream.png",  "images/codes/int.png", "images/codes/newGameObject.png",  "images/codes/run.png",  "images/codes/start.png",  "images/codes/string.png",  "images/codes/try.png",  "images/codes/update.png"]
 
             var dictImg = {}
 
@@ -236,7 +229,8 @@ html(lang="en")
             var vueImages = []
 
             for(var i = 0; i < 100; i++){
-                vueImages.push({ path : dictImg[getRandomInt(0,code_images_array.length-1)], blur : getRandomInt(0,5)});
+                vueImages.push({ path : dictImg[getRandomInt(0,code_images_array.length-1)], blur : getRandomInt(0,4),
+                size : getRandomInt(15,35)});
             }
 
             //- console.log(vueImages);

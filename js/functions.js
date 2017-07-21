@@ -1,7 +1,8 @@
 $(window).ready(function() {
 	$('.code-images').each(function(i) {
 		var el = $('.code-images').eq(i);
-		el.css({'filter' : 'blur('+ el.attr('blur') +'px)'})
+		el.css({'filter' : 'blur('+ el.attr('blur') +'px)',
+				'width' : el.attr('size')+'%'})
 		// console.log($('.code-images').eq(i).attr('blur'));
 		
 	});
@@ -98,8 +99,8 @@ $(window).scroll(function() {
 		$('.avatar4').css({'opacity': '0'})
 	}
 
-	$('.side-menu').css({
-			'transform' : 'translate(0px, -'+ wScroll / 15+'%)'
+	$('.code-side').css({
+			'transform' : 'translate(0px, '+ wScroll / 40+'%)'
 	});
 
 	if(wScroll >= $('#unique').offset().top - $(window).height() && wScroll < $('#fine').offset().top - $(window).height()){

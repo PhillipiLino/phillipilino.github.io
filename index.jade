@@ -20,7 +20,9 @@ html(lang="en")
 
         section.content
 
-            #code-scroll.code-side
+            #code-side-left.code-side
+                img.code-images(v-for="item in items" v-bind:src="item.path" v-bind:blur="item.blur" v-bind:size="item.size")
+            #code-side-right.code-side
                 img.code-images(v-for="item in items" v-bind:src="item.path" v-bind:blur="item.blur" v-bind:size="item.size")
 
             .side-menu
@@ -135,23 +137,6 @@ html(lang="en")
                     .avatar3
                     .avatar4
 
-                //- #test
-                //-     .div(v-for="item in items") 
-                //-         img(v-bind:src="item")
-                        //- img(src={{item}})
-
-                //- script(src='https://unpkg.com/vue')
-                //- script.
-                    //- const app = new Vue({
-                    //-     el: '#test',
-                    //-     data: {
-                    //-         items: [
-                    //-           { message: 'Foo' },
-                    //-           { message: 'Bar' }
-                    //-         ]
-                    //-       }
-                    //- });
-
         footer.f
             .row.footer-stuff
                 .columns.three
@@ -236,13 +221,19 @@ html(lang="en")
             //- console.log(vueImages);
 
             const app = new Vue({
-                el: '#code-scroll',
+                el: '#code-side-right',
+                data: {
+                    items: vueImages
+                  }
+            });
+
+            const app2 = new Vue({
+                el: '#code-side-left',
                 data: {
                     items: vueImages
                   }
             });
             
-        
         script(src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous")
         script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js")

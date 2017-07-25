@@ -29,11 +29,16 @@ img {
   margin-bottom: 400px;
   position: absolute;
   background-color: transparent;
-  left: 0px;
   z-index: 0; }
   .code-side img {
     margin-top: 10%;
     max-width: 100%; }
+
+#code-side-left {
+  left: 0px; }
+
+#code-side-right {
+  right: 0px; }
 
 .side-menu {
   width: 5%;
@@ -234,13 +239,23 @@ img {
     background-position: center 0px;
     background-repeat: no-repeat; }
 
+.f-over {
+  background: black;
+  color: black;
+  padding: 40px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1; }
+
 footer {
   background: #e6e6e6;
   color: black;
   padding: 40px 0;
   position: fixed;
   bottom: 0;
-  width: 100%; }
+  width: 25%;
+  left: 0; }
   footer .footer-stuff {
     max-width: 640px;
     margin: 0 auto; }

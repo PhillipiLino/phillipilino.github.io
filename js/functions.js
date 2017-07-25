@@ -68,6 +68,9 @@ $(window).scroll(function() {
 
 	}
 
+	// var offsetFooter = Math.min(0, wScroll - $('.f-over').offset().top + $(window).height() - 350);
+	$('.f-over').css({'transform': 'scale('+ wScroll/5 +'%)'});
+
 	if(wScroll > $('.avatar').offset().top - $(window).height() + 600
 		&& wScroll < $('.avatar').offset().top - $(window).height() + 700){
 

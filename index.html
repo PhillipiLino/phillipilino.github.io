@@ -18,7 +18,8 @@
       <div class="fore-bird"></div>
     </header>
     <section class="content">
-      <div id="code-scroll" class="code-side"><img v-for="item in items" v-bind:src="item.path" v-bind:blur="item.blur" v-bind:size="item.size" class="code-images"></div>
+      <div id="code-side-left" class="code-side"><img v-for="item in items" v-bind:src="item.path" v-bind:blur="item.blur" v-bind:size="item.size" class="code-images"></div>
+      <div id="code-side-right" class="code-side"><img v-for="item in items" v-bind:src="item.path" v-bind:blur="item.blur" v-bind:size="item.size" class="code-images"></div>
       <div class="side-menu">
         <ul>
           <li><a id="a-unique" href="#unique"> 
@@ -198,13 +199,19 @@
         //- console.log(vueImages);
       
         const app = new Vue({
-            el: '#code-scroll',
+            el: '#code-side-right',
+            data: {
+                items: vueImages
+              }
+        });
+      
+        const app2 = new Vue({
+            el: '#code-side-left',
             data: {
                 items: vueImages
               }
         });
         
-      
     </script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

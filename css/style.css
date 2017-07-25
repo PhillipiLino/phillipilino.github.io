@@ -865,7 +865,8 @@ figure {
   position: relative;
   z-index: 2;
   background: white;
-  margin-bottom: 400px; }
+  margin-bottom: 400px;
+  overflow: hidden; }
   .content article {
     padding: 100px 0;
     width: 70%;
@@ -882,11 +883,16 @@ img {
   margin-bottom: 400px;
   position: absolute;
   background-color: transparent;
-  left: 0px;
   z-index: 0; }
   .code-side img {
     margin-top: 10%;
     max-width: 100%; }
+
+#code-side-left {
+  left: 0px; }
+
+#code-side-right {
+  right: 0px; }
 
 .side-menu {
   width: 5%;
@@ -1086,6 +1092,17 @@ img {
     background-image: url(../images/frente.png);
     background-position: center 0px;
     background-repeat: no-repeat; }
+
+.f-over {
+  background: black;
+  color: black;
+  padding: 40px 0;
+  position: fixed;
+  bottom: 0;
+  width: 25%;
+  height: 240px;
+  z-index: 1;
+  left: 0; }
 
 footer {
   background: #e6e6e6;

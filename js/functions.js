@@ -73,33 +73,20 @@ $(window).scroll(function() {
 
 	if(wScroll > $('.avatar').offset().top - $(window).height() + 600
 		&& wScroll < $('.avatar').offset().top - $(window).height() + 700){
-
-		$('.avatar1').css({'opacity': '0'})
-		$('.avatar2').css({'opacity': '1'})
-		$('.avatar3').css({'opacity': '0'})
-		$('.avatar4').css({'opacity': '0'})
+		
+		$('.avatar').css({'background-position': '-650px'})
 
 	} else if(wScroll > $('.avatar').offset().top - $(window).height() + 700
 		&& wScroll < $('.avatar').offset().top - $(window).height() + 800){
 
-		$('.avatar1').css({'opacity': '0'})
-		$('.avatar2').css({'opacity': '0'})
-		$('.avatar3').css({'opacity': '1'})
-		$('.avatar4').css({'opacity': '0'})
+		$('.avatar').css({'background-position': '-1350px'})
 
 	} else if(wScroll > $('.avatar').offset().top - $(window).height() + 800){
 
-		$('.avatar1').css({'opacity': '0'})
-		$('.avatar2').css({'opacity': '0'})
-		$('.avatar3').css({'opacity': '0'})
-		$('.avatar4').css({'opacity': '1'})
+		$('.avatar').css({'background-position': '-2050px'})
 
 	} else {
-		
-		$('.avatar1').css({'opacity': '1'})
-		$('.avatar2').css({'opacity': '0'})
-		$('.avatar3').css({'opacity': '0'})
-		$('.avatar4').css({'opacity': '0'})
+		$('.avatar').css({'background-position': '100px'})
 	}
 
 	$('.code-side').css({

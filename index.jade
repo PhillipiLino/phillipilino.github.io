@@ -2,7 +2,7 @@ doctype html
 html(lang="en")
     head
         meta(charset="utf-8")
-        title BlackBird Co.
+        title Phillipi Unger Lino
         meta(name='description', content="")
         meta(name='author', content="")
         meta(name='viewport', content="width=device-width, initial-scale=1")
@@ -36,57 +36,66 @@ html(lang="en")
 
             article.centro
 
-                h1(id="unique" class="section scrollspy") Unique Style
+                h2(id="unique" class="section scrollspy") Sobre
 
-                hr
+                //- hr
 
                 p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
                 hr
 
+                h2(id="fine" class="section scrollspy") Projetos Desenvolvidos
+
+                //- hr
+
                 .clothes-pics
                     .row.img-row
                         figure.columns.four
-                            img(src="images/model1.jpg")
-                            figcaption BlackBird Sweater - <strong>$135</strong>
+                            a(href="games/chapolin/index.html")
+                                img(src="games/chapolin/ss.png" href="games/chapolin/index.html")
+                            figcaption Chapolin - Uma Aventura Virtual
 
                         figure.columns.four
-                            img(src="images/model2.jpg")
-                            figcaption BlackBird Bla - <strong>$135</strong>
+                            a(href="games/futebolDeBotao/index.html")
+                                img(src="games/futebolDeBotao/ss.png")
+                            figcaption Button Cup
 
                         figure.columns.four
-                            img(src="images/model3.jpg")
-                            figcaption BlackBird Jacket - <strong>$135</strong>
+                            a(href="games/SpaceMonkeys/index.html")
+                                img(src="games/SpaceMonkeys/ss.png")
+                            figcaption SpaceMonkeys
 
-                    .row.img-row
-                        figure.columns.four
-                            img(src="images/model1.jpg")
-                            figcaption BlackBird Sweater - <strong>$135</strong>
+                    //- .row.img-row
+                    //-     figure.columns.four
+                    //-         img(src="images/model1.jpg")
+                    //-         figcaption BlackBird Sweater - <strong>$135</strong>
 
-                        figure.columns.four
-                            img(src="images/model2.jpg")
-                            figcaption BlackBird Sweater - <strong>$135</strong>
+                    //-     figure.columns.four
+                    //-         img(src="images/model2.jpg")
+                    //-         figcaption BlackBird Sweater - <strong>$135</strong>
 
-                        figure.columns.four
-                            img(src="images/model3.jpg")
-                            figcaption BlackBird Sweater - <strong>$135</strong>
+                    //-     figure.columns.four
+                    //-         img(src="images/model3.jpg")
+                    //-         figcaption BlackBird Sweater - <strong>$135</strong>
 
-                    .row.img-row
-                        figure.columns.four
-                            img(src="images/model1.jpg")
-                            figcaption BlackBird Sweater - <strong>$135</strong>
+                    //- .row.img-row
+                    //-     figure.columns.four
+                    //-         img(src="images/model1.jpg")
+                    //-         figcaption BlackBird Sweater - <strong>$135</strong>
 
-                        figure.columns.four
-                            img(src="images/model2.jpg")
-                            figcaption BlackBird Sweater - <strong>$135</strong>
+                    //-     figure.columns.four
+                    //-         img(src="images/model2.jpg")
+                    //-         figcaption BlackBird Sweater - <strong>$135</strong>
 
-                        figure.columns.four
-                            img(src="images/model3.jpg")
-                            figcaption BlackBird Sweater - <strong>$135</strong>
+                    //-     figure.columns.four
+                    //-         img(src="images/model3.jpg")
+                    //-         figcaption BlackBird Sweater - <strong>$135</strong>
 
-                    #test.row.img-row
-                        figure.columns.four(class="responsive-img" v-for="item in items") 
-                            img(v-bind:src="item")
+                    //- #test.row.img-row
+                    //-     figure.columns.four(class="responsive-img" v-for="item in items") 
+                    //-         img(v-bind:src="item")
+                
+                hr
 
                 h1(id="fine" class="section scrollspy") Fine Tayloring
 

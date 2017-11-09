@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "chapolin.data.unityweb",
+"asmCodeUrl": "chapolin.asm.code.unityweb",
+"asmMemoryUrl": "chapolin.asm.memory.unityweb",
+"asmFrameworkUrl": "chapolin.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#222C36"
+}

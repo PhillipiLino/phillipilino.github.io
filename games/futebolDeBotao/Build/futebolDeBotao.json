@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "futebolDeBotao.data.unityweb",
+"asmCodeUrl": "futebolDeBotao.asm.code.unityweb",
+"asmMemoryUrl": "futebolDeBotao.asm.memory.unityweb",
+"asmFrameworkUrl": "futebolDeBotao.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#222C36"
+}

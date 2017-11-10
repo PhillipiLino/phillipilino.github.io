@@ -68,6 +68,16 @@ $(window).scroll(function() {
 
 	}
 
+	if(wScroll > $('.apps').offset().top - $(window).height()){
+		// console.log("teste");
+		var offset = Math.min(0, wScroll - $('.apps').offset().top + $(window).height() - 350);
+
+		$('.post-1').css({'transform': 'translate('+ offset +'px, '+ Math.abs(offset * 0.2) +'px)'});
+
+		$('.post-3').css({'transform': 'translate('+ Math.abs(offset) +'px, '+ Math.abs(offset * 0.2) +'px)'});
+
+	}
+
 	// var offsetFooter = Math.min(0, wScroll - $('.f-over').offset().top + $(window).height() - 350);
 	$('.f-over').css({'transform': 'scale('+ wScroll/5 +'%)'});
 

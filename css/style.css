@@ -869,7 +869,6 @@ figure {
   overflow: hidden; }
   .content article {
     padding: 100px 0;
-    width: 70%;
     max-width: 640px;
     margin: 0 auto;
     text-align: center; }
@@ -878,22 +877,14 @@ img {
   max-width: 100%; }
 
 .code-side {
-  width: 25%;
   height: 50%;
   margin-bottom: 400px;
-  position: absolute;
   background-color: transparent;
   z-index: 0; }
   .code-side img {
     margin-top: 10%;
     max-width: 100%;
     opacity: 0.3; }
-
-#code-side-left {
-  left: 0px; }
-
-#code-side-right {
-  right: 0px; }
 
 .side-menu {
   width: 5%;
@@ -996,7 +987,7 @@ img {
     transition: all 0.3s ease-in-out; }
 
 .large-window {
-  height: 640px;
+  padding-top: 100%;
   background-image: url(../images/model2.jpg);
   background-position: center 0px;
   background-repeat: repeat-y;

@@ -17,20 +17,9 @@
       <div class="logo"></div>
       <div class="fore-bird"></div>
     </header>
-    <section class="content">
-      <div id="code-side-left" class="code-side"><img v-for="item in items" v-bind:src="item.path" v-bind:blur="item.blur" v-bind:size="item.size" class="code-images"></div>
-      <div id="code-side-right" class="code-side"><img v-for="item in items" v-bind:src="item.path" v-bind:blur="item.blur" v-bind:size="item.size" class="code-images"></div>
-      <div class="side-menu">
-        <ul>
-          <li><a id="a-unique" href="#unique"> 
-              <button type="button" id="button-unique" data-position="left" data-delay="50" data-tooltip="Unique Style" class="btn btn-default btn-circle tooltipped"></button></a></li>
-          <li><a id="a-fine" href="#fine">
-              <button type="button" id="button-fine" data-position="left" data-delay="50" data-tooltip="Fine Tayloring" class="btn btn-default btn-circle tooltipped"></button></a></li>
-          <li><a id="a-rich" href="#rich">
-              <button type="button" id="button-rich" data-position="left" data-delay="50" data-tooltip="Rich History" class="btn btn-default btn-circle tooltipped"></button></a></li>
-        </ul>
-      </div>
-      <article class="centro">
+    <section class="content row">
+      <div id="code-side-left" class="code-side columns three"><img v-for="item in items" v-bind:src="item.path" v-bind:blur="item.blur" v-bind:size="item.size" class="code-images"></div>
+      <article class="centro columns six">
         <h2 id="unique" class="section scrollspy">Sobre</h2>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
         <hr>
@@ -62,9 +51,11 @@
           </div>
         </div>
         <hr>
-        <div class="large-window">
-          <div class="window-tint">
-            <div class="promo-text">Fall Suits<strong><span>from</span> $99</strong><a href="" class="window-cta">Shop Now</a></div>
+        <div class="row">
+          <div class="large-window columns twelve">
+            <div class="window-tint">
+              <div class="promo-text">Fall Suits<strong><span>from</span> $99</strong><a href="" class="window-cta">Shop Now</a></div>
+            </div>
           </div>
         </div>
         <h1 id="rich" class="section scrollspy">Rich History</h1>
@@ -120,6 +111,7 @@
         <hr>
         <div class="avatar"></div>
       </article>
+      <div id="code-side-right" class="code-side columns three"><img v-for="item in items" v-bind:src="item.path" v-bind:blur="item.blur" v-bind:size="item.size" class="code-images"></div>
     </section>
     <footer class="f">
       <div class="row footer-stuff">

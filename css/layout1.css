@@ -101,9 +101,9 @@ img {
   left: 50%;
   margin-left: -480px; }
 
-.clothes-pics {
+#games-section {
   margin-bottom: 100px; }
-  .clothes-pics figure {
+  #games-section figure {
     margin-bottom: 20px;
     margin: 10px;
     position: relative;
@@ -112,18 +112,18 @@ img {
     transition: all 0.3s ease-in-out;
     overflow: hidden;
     cursor: pointer; }
-    .clothes-pics figure.is-showing {
+    #games-section figure.is-showing {
       opacity: 1;
       transform: translateX(0px); }
-    .clothes-pics figure img {
+    #games-section figure img {
       display: block;
       transform: scale(1);
       transition: all 0.3s ease-in-out; }
-    .clothes-pics figure:hover figcaption {
+    #games-section figure:hover figcaption {
       left: 0%; }
-    .clothes-pics figure:hover img {
+    #games-section figure:hover img {
       transform: scale(1.2); }
-  .clothes-pics figcaption {
+  #games-section figcaption {
     position: absolute;
     bottom: 10px;
     left: -100%;
@@ -134,7 +134,7 @@ img {
     transition: all 0.3s ease-in-out; }
 
 .large-window {
-  padding-top: 50%;
+  padding-top: 100%;
   background-image: url(../images/model2.jpg);
   background-position: center 0px;
   background-repeat: repeat-y;
@@ -194,19 +194,13 @@ img {
   .blog-posts .post-3 {
     transform: translate(-100px, 20px); }
 
-.apps {
+#apps-section {
   margin-top: 20px; }
-  .apps .post {
+  #apps-section .post {
     border: 1px solid #e1e1e1;
     padding: 20px 20px 0;
     background: white;
     position: relative; }
-  .apps .post-1 {
-    transform: translate(100px, 20px); }
-  .apps .post-2 {
-    z-index: 2; }
-  .apps .post-3 {
-    transform: translate(-100px, 20px); }
 
 .avatar {
   width: 100%;

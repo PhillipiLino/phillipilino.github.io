@@ -18,36 +18,52 @@
       <div class="fore-bird"></div>
     </header>
     <section class="content row">
-      <div id="code-side-left" class="code-side columns three"><img v-for="item in items" v-bind:src="item.path" v-bind:blur="item.blur" v-bind:size="item.size" class="code-images"></div>
-      <article class="centro columns six">
-        <h2 id="unique" class="section scrollspy">Sobre</h2>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-        <hr>
-        <h2 id="fine" class="section scrollspy">Jogos Desenvolvidos</h2>
-        <div class="clothes-pics">
-          <div class="row img-row">
-            <figure class="columns four"><a href="games/chapolin/index.html"><img src="games/chapolin/ss.png" href="games/chapolin/index.html"></a>
-              <figcaption>Chapolin - Uma Aventura Virtual</figcaption>
-            </figure>
-            <figure class="columns four"><a href="games/futebolDeBotao/index.html"><img src="games/futebolDeBotao/ss.png"></a>
-              <figcaption>Button Cup</figcaption>
-            </figure>
-            <figure class="columns four"><a href="games/SpaceMonkeys/index.html"><img src="games/SpaceMonkeys/ss.png"></a>
-              <figcaption>SpaceMonkeys</figcaption>
-            </figure>
+      <div id="code-side-left" class="code-side col m2 hide-on-small-only"><img v-for="item in items" v-bind:src="item.path" v-bind:blur="item.blur" v-bind:size="item.size" class="code-images"></div>
+      <div class="centro center-align col s12 m8">
+        <div class="row">
+          <div class="col s12">
+            <h2 id="unique" class="section scrollspy">Sobre</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <hr>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <h2 id="fine" class="section scrollspy">Jogos Desenvolvidos</h2>
+          </div>
+        </div>
+        <div id="games-section">
+          <div class="row img-row center-align col s12">
+            <div v-for="game in games" class="col s12 m12 l3 offset-l1">
+              <figure>
+                <h4 class="hide-on-large-only">{{game.name}}</h4><a v-bind:href="'games/'+game.folder+'/index.html'"><img v-bind:src="'games/'+game.folder+'/ss.png'" href="'games/'+game.folder+'/index.html'"></a>
+                <figcaption>{{game.name}}</figcaption>
+              </figure>
+            </div>
           </div>
         </div>
         <hr>
         <h1 id="fine" class="section scrollspy">Android Apps</h1>
-        <div class="apps row">
-          <div class="post columns four post-1">
-          </div>
-          <div class="post columns four post-2">
-            <h5>Procura-se Banda!</h5><img src="apps/procurasebanda.png">
-            <p>O "Procura-se Banda" foi criado para que músicos possam formar suas bandas e/ou encontrar novos integrante para seus projetos.</p>
-            <p><a href="https://play.google.com/store/apps/details?id=br.com.procurasebanda&amp;hl=en" class="button">App Page</a></p>
-          </div>
-          <div class="post columns four post-3">
+        <div id="apps-section" class="row">
+          <div v-for="app in apps" class="post col s12 m12 l3 offset-l1">
+            <div class="row">
+              <div class="col s12">
+                <h5>{{app.name}}</h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12"><img v-bind:src="'apps/'+app.screenshot"></div>
+            </div>
+            <div class="row">
+              <div class="col s12">
+                <p>{{app.description}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12">
+                <p><a v-bind:href="app.link" class="button">App Page</a></p>
+              </div>
+            </div>
           </div>
         </div>
         <hr>
@@ -105,13 +121,13 @@
                 </p>
               </div>
             </blockquote>
-            <script async="" defer="" src="//platform.instagram.com/en_US/embeds.js"></script>
+            <script async="" defer="" src="http://platform.instagram.com/en_US/embeds.js"></script>
           </div>
         </div>
         <hr>
         <div class="avatar"></div>
-      </article>
-      <div id="code-side-right" class="code-side columns three"><img v-for="item in items" v-bind:src="item.path" v-bind:blur="item.blur" v-bind:size="item.size" class="code-images"></div>
+      </div>
+      <div id="code-side-right" class="code-side col m2 hide-on-small-only"><img v-for="item in items" v-bind:src="item.path" v-bind:blur="item.blur" v-bind:size="item.size" class="code-images"></div>
     </section>
     <footer class="f">
       <div class="row footer-stuff">
@@ -137,6 +153,7 @@
     <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase-database.js"></script>
     <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue-instagram"></script>
     <script>
       // Initialize Firebase
         var config = {
@@ -159,12 +176,12 @@
             var lsize = l.lenght;
             var links = l.slice(1, lsize);
             //- console.log(links);
-            const app = new Vue({
-                    el: '#test',
-                    data: {
-                        items: links
-                      }
-                });
+            //- const app = new Vue({
+            //-         el: '#test',
+            //-         data: {
+            //-             items: links
+            //-           }
+            //-     });
         });
       
         function getRandomInt(min, max) {
@@ -201,6 +218,27 @@
                 items: vueImages
               }
         });
+      
+        const app3 = new Vue({
+            el: '#games-section',
+            data: {
+                games: [{name:"Chapolin - Uma Aventura Virtual", folder:"chapolin"},
+                        {name:"Space Monkeys", folder:"SpaceMonkeys"},
+                        {name:"Button Cup", folder:"futebolDeBotao"}]
+              }
+        });
+      
+        const app4 = new Vue({
+            el: '#apps-section',
+            data: {
+                apps: [{name:"Procura-se Banda!", screenshot:"procurasebanda.png", description:"O 'Procura-se Banda' foi criado para que músicos possam formar suas bandas e/ou encontrar novos integrante para seus projetos.", link:"https://play.google.com/store/apps/details?id=br.com.procurasebanda&hl=en"},
+                    ]
+              }
+        });
+      
+        
+      
+      
         
     </script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>

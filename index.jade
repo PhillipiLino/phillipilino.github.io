@@ -20,7 +20,7 @@ html(lang="en")
 
         section.content.row
 
-                #code-side-left.code-side.columns.three
+                #code-side-left.code-side.col.m2.hide-on-small-only
                     img.code-images(v-for="item in items" v-bind:src="item.path" v-bind:blur="item.blur" v-bind:size="item.size")
                 
 
@@ -33,90 +33,51 @@ html(lang="en")
                 //-         li: a(id="a-rich" href="#rich")
                 //-             button(type="button" id="button-rich" class="btn btn-default btn-circle tooltipped" data-position="left" data-delay="50" data-tooltip="Rich History")
 
-                article.centro.columns.six
+                div.centro.center-align.col.s12.m8
 
-                    h2(id="unique" class="section scrollspy") Sobre
+                    .row
 
-                    //- hr
+                        .col.s12
+                            h2(id="unique" class="section scrollspy") Sobre
 
-                    p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            //- hr
 
-                    hr
+                            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
-                    h2(id="fine" class="section scrollspy") Jogos Desenvolvidos
+                            hr
 
-                    //- hr
+                    .row
+                        .col.s12
+                            h2(id="fine" class="section scrollspy") Jogos Desenvolvidos
 
-                    .clothes-pics
-                        .row.img-row
-                            figure.columns.four
-                                a(href="games/chapolin/index.html")
-                                    img(src="games/chapolin/ss.png" href="games/chapolin/index.html")
-                                figcaption Chapolin - Uma Aventura Virtual
+                    #games-section
+                        .row.img-row.center-align.col.s12
+                            .col.s12.m12.l3.offset-l1(v-for="game in games")
+                                figure
+                                    h4.hide-on-large-only {{game.name}}
+                                    a(v-bind:href="'games/'+game.folder+'/index.html'")
+                                        img(v-bind:src="'games/'+game.folder+'/ss.png'" href="'games/'+game.folder+'/index.html'")
+                                    figcaption {{game.name}}
 
-                            figure.columns.four
-                                a(href="games/futebolDeBotao/index.html")
-                                    img(src="games/futebolDeBotao/ss.png")
-                                figcaption Button Cup
-
-                            figure.columns.four
-                                a(href="games/SpaceMonkeys/index.html")
-                                    img(src="games/SpaceMonkeys/ss.png")
-                                figcaption SpaceMonkeys
-
-                        //- .row.img-row
-                        //-     figure.columns.four
-                        //-         img(src="images/model1.jpg")
-                        //-         figcaption BlackBird Sweater - <strong>$135</strong>
-
-                        //-     figure.columns.four
-                        //-         img(src="images/model2.jpg")
-                        //-         figcaption BlackBird Sweater - <strong>$135</strong>
-
-                        //-     figure.columns.four
-                        //-         img(src="images/model3.jpg")
-                        //-         figcaption BlackBird Sweater - <strong>$135</strong>
-
-                        //- .row.img-row
-                        //-     figure.columns.four
-                        //-         img(src="images/model1.jpg")
-                        //-         figcaption BlackBird Sweater - <strong>$135</strong>
-
-                        //-     figure.columns.four
-                        //-         img(src="images/model2.jpg")
-                        //-         figcaption BlackBird Sweater - <strong>$135</strong>
-
-                        //-     figure.columns.four
-                        //-         img(src="images/model3.jpg")
-                        //-         figcaption BlackBird Sweater - <strong>$135</strong>
-
-                        //- #test.row.img-row
-                        //-     figure.columns.four(class="responsive-img" v-for="item in items") 
-                        //-         img(v-bind:src="item")
-                    
                     hr
 
                     h1(id="fine" class="section scrollspy") Android Apps
 
-                    .apps.row
+                    #apps-section.row
 
-                        .post.columns.four.post-1
-                            //- h5 Post Title
-                            //- img(src="images/posts/one.jpg")
-                            //- p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            //- p: a.button(href="") Read More
-
-                        .post.columns.four.post-2
-                            h5 Procura-se Banda!
-                            img(src="apps/procurasebanda.png")
-                            p O "Procura-se Banda" foi criado para que músicos possam formar suas bandas e/ou encontrar novos integrante para seus projetos.
-                            p: a.button(href="https://play.google.com/store/apps/details?id=br.com.procurasebanda&hl=en") App Page
-
-                        .post.columns.four.post-3
-                            //- h5 Post Title
-                            //- img(src="images/posts/three.jpg")
-                            //- p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            //- p: a.button(href="") Read More
+                        .post.col.s12.m12.l3.offset-l1(v-for="app in apps")
+                            .row
+                                .col.s12
+                                    h5 {{app.name}}
+                            .row
+                                .col.s12
+                                    img(v-bind:src="'apps/'+app.screenshot")
+                            .row
+                                .col.s12
+                                    p {{app.description}}
+                            .row
+                                .col.s12
+                                    p: a.button(v-bind:href="app.link") App Page
 
                     hr
 
@@ -191,14 +152,14 @@ html(lang="en")
                                   a(href='https://www.instagram.com/p/BZgMRLLH-V_/', style=' color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;', target='_blank') Uma publicação compartilhada por MangaArt (@artedomanga)
                                   |  em 
                                   time(style=' font-family:Arial,sans-serif; font-size:14px; line-height:17px;', datetime='2017-09-26T11:44:00+00:00') Set 26, 2017 às 4:44 PDT
-                            script(async='', defer='', src='//platform.instagram.com/en_US/embeds.js')
+                            script(async='', defer='', src='http://platform.instagram.com/en_US/embeds.js')
 
 
                     hr
 
                     .avatar
 
-                #code-side-right.code-side.columns.three
+                #code-side-right.code-side.col.m2.hide-on-small-only
                     img.code-images(v-for="item in items" v-bind:src="item.path" v-bind:blur="item.blur" v-bind:size="item.size")
 
         footer.f
@@ -233,6 +194,11 @@ html(lang="en")
         script(src="https://www.gstatic.com/firebasejs/3.8.0/firebase-auth.js")
         script(src="https://www.gstatic.com/firebasejs/3.8.0/firebase-database.js")
         script(src='https://unpkg.com/vue')
+
+        script(src='https://unpkg.com/vue-instagram')
+
+        
+
         script.
           // Initialize Firebase
             var config = {
@@ -255,12 +221,12 @@ html(lang="en")
                 var lsize = l.lenght;
                 var links = l.slice(1, lsize);
                 //- console.log(links);
-                const app = new Vue({
-                        el: '#test',
-                        data: {
-                            items: links
-                          }
-                    });
+                //- const app = new Vue({
+                //-         el: '#test',
+                //-         data: {
+                //-             items: links
+                //-           }
+                //-     });
             });
 
             function getRandomInt(min, max) {
@@ -297,6 +263,27 @@ html(lang="en")
                     items: vueImages
                   }
             });
+
+            const app3 = new Vue({
+                el: '#games-section',
+                data: {
+                    games: [{name:"Chapolin - Uma Aventura Virtual", folder:"chapolin"},
+                            {name:"Space Monkeys", folder:"SpaceMonkeys"},
+                            {name:"Button Cup", folder:"futebolDeBotao"}]
+                  }
+            });
+
+            const app4 = new Vue({
+                el: '#apps-section',
+                data: {
+                    apps: [{name:"Procura-se Banda!", screenshot:"procurasebanda.png", description:"O 'Procura-se Banda' foi criado para que músicos possam formar suas bandas e/ou encontrar novos integrante para seus projetos.", link:"https://play.google.com/store/apps/details?id=br.com.procurasebanda&hl=en"},
+                        ]
+                  }
+            });
+
+            
+
+
             
         script(src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous")
         script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous")

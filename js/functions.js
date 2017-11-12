@@ -29,21 +29,21 @@ $(window).scroll(function() {
 	})
 
 
-	if(wScroll > $('.clothes-pics').offset().top - ($(window).height() / 1.2)) {
+	if(wScroll > $('#games-section').offset().top - ($(window).height() / 1.2)) {
 
-		$('.clothes-pics figure').each(function(i) {
+		$('#games-section figure').each(function(i) {
 
 			setTimeout(function(){
-				$('.clothes-pics figure').eq(i).addClass('is-showing');
+				$('#games-section figure').eq(i).addClass('is-showing');
 			}, 150 * (i+1));
 			
 
 		});
 	} else {
-		$('.clothes-pics figure').each(function(i) {
+		$('#games-section figure').each(function(i) {
 
 			setTimeout(function(){
-				$('.clothes-pics figure').eq(i).removeClass('is-showing');
+				$('#games-section figure').eq(i).removeClass('is-showing');
 			}, 150 * (i+1));
 			
 
@@ -68,15 +68,15 @@ $(window).scroll(function() {
 
 	}
 
-	if(wScroll > $('.apps').offset().top - $(window).height()){
-		// console.log("teste");
-		var offset = Math.min(0, wScroll - $('.apps').offset().top + $(window).height() - 350);
+	// if(wScroll > $('.apps').offset().top - $(window).height()){
+	// 	// console.log("teste");
+	// 	var offset = Math.min(0, wScroll - $('.apps').offset().top + $(window).height() - 350);
 
-		$('.post-1').css({'transform': 'translate('+ offset +'px, '+ Math.abs(offset * 0.2) +'px)'});
+	// 	$('.post-1').css({'transform': 'translate('+ offset +'px, '+ Math.abs(offset * 0.2) +'px)'});
 
-		$('.post-3').css({'transform': 'translate('+ Math.abs(offset) +'px, '+ Math.abs(offset * 0.2) +'px)'});
+	// 	$('.post-3').css({'transform': 'translate('+ Math.abs(offset) +'px, '+ Math.abs(offset * 0.2) +'px)'});
 
-	}
+	// }
 
 	// var offsetFooter = Math.min(0, wScroll - $('.f-over').offset().top + $(window).height() - 350);
 	$('.f-over').css({'transform': 'scale('+ wScroll/5 +'%)'});
@@ -84,19 +84,19 @@ $(window).scroll(function() {
 	if(wScroll > $('.avatar').offset().top - $(window).height() + 600
 		&& wScroll < $('.avatar').offset().top - $(window).height() + 700){
 		
-		$('.avatar').css({'background-position': '-650px'})
+		$('.avatar').css({'background-position': '35%'})
 
 	} else if(wScroll > $('.avatar').offset().top - $(window).height() + 700
 		&& wScroll < $('.avatar').offset().top - $(window).height() + 800){
 
-		$('.avatar').css({'background-position': '-1350px'})
+		$('.avatar').css({'background-position': '70%'})
 
 	} else if(wScroll > $('.avatar').offset().top - $(window).height() + 800){
 
-		$('.avatar').css({'background-position': '-2050px'})
+		$('.avatar').css({'background-position': '105%'})
 
 	} else {
-		$('.avatar').css({'background-position': '100px'})
+		$('.avatar').css({'background-position': '-13%'})
 	}
 
 	$('.code-side').css({

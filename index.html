@@ -68,7 +68,7 @@
         </div>
         <hr>
         <div class="row">
-          <div class="large-window columns twelve">
+          <div class="large-window col l8 offset-l2">
             <div class="window-tint">
               <div class="promo-text">Fall Suits<strong><span>from</span> $99</strong><a href="" class="window-cta">Shop Now</a></div>
             </div>
@@ -125,6 +125,18 @@
           </div>
         </div>
         <hr>
+        <vue-instagram></vue-instagram>
+        <script type="text/x-template" id="demo-template">
+          <vue-instagram token="5434292508.fab4b86.03f4767871dd4fb89317605e0abca251" username="artedomanga" :count="5">
+              <template slot="feeds" scope="props">
+                  <li class="fancy-list"> {{ props.feed.link }} </li>
+              </template>
+              <template slot="error" scope="props">
+                  <div class="fancy-alert"> {{ props.error.error_message }} </div>
+              </template>
+          </vue-instagram>
+          
+        </script>
         <div class="avatar"></div>
       </div>
       <div id="code-side-right" class="code-side col m2 hide-on-small-only"><img v-for="item in items" v-bind:src="item.path" v-bind:blur="item.blur" v-bind:size="item.size" class="code-images"></div>
@@ -154,6 +166,11 @@
     <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase-database.js"></script>
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/vue-instagram"></script>
+    <script>
+      Vue.use(VueInstagram.default)
+      //- import VueInstagram from 'vue-instagram'
+      
+    </script>
     <script>
       // Initialize Firebase
         var config = {
@@ -236,10 +253,18 @@
               }
         });
       
-        
+        const app5 = new Vue({
+            el: '#apps-section',
+            template: '#demo-template',
+            data: {
+                selected: 2,
+                options: [
+                  { id: 1, text: 'Hello' },
+                  { id: 2, text: 'World' }
+                ]
+              }
+        });
       
-      
-        
     </script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

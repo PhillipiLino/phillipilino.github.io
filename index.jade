@@ -82,7 +82,7 @@ html(lang="en")
                     hr
 
                     .row
-                        .large-window.columns.twelve
+                        .large-window.col.l8.offset-l2
                             .window-tint
                                 .promo-text Fall Suits
                                     strong <span>from</span> $99
@@ -157,6 +157,18 @@ html(lang="en")
 
                     hr
 
+                    vue-instagram
+
+                    script(type="text/x-template" id="demo-template").
+                        <vue-instagram token="5434292508.fab4b86.03f4767871dd4fb89317605e0abca251" username="artedomanga" :count="5">
+                            <template slot="feeds" scope="props">
+                                <li class="fancy-list"> {{ props.feed.link }} </li>
+                            </template>
+                            <template slot="error" scope="props">
+                                <div class="fancy-alert"> {{ props.error.error_message }} </div>
+                            </template>
+                        </vue-instagram>
+
                     .avatar
 
                 #code-side-right.code-side.col.m2.hide-on-small-only
@@ -197,7 +209,9 @@ html(lang="en")
 
         script(src='https://unpkg.com/vue-instagram')
 
-        
+        script.
+            Vue.use(VueInstagram.default)
+            //- import VueInstagram from 'vue-instagram'
 
         script.
           // Initialize Firebase
@@ -281,10 +295,18 @@ html(lang="en")
                   }
             });
 
-            
+            const app5 = new Vue({
+                el: '#apps-section',
+                template: '#demo-template',
+                data: {
+                    selected: 2,
+                    options: [
+                      { id: 1, text: 'Hello' },
+                      { id: 2, text: 'World' }
+                    ]
+                  }
+            });
 
-
-            
         script(src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous")
         script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js")

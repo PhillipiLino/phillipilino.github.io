@@ -916,17 +916,19 @@ img {
 .bird-box {
   position: relative;
   height: 600px;
-  background-image: url(../images/bird-bg.jpg);
+  background-color: #f5ffb4;
+  background-image: url(../images/banner.png);
+  background-repeat: no-repeat;
   background-size: auto 600px;
-  background-position: top center;
-  background-attachment: fixed;
+  background-position: left;
   overflow: hidden;
   z-index: 3; }
 
 .logo {
   height: 100px;
   width: 100%;
-  background-image: url(../images/black-bird-logo.svg);
+  background-size: contain;
+  background-image: url(../images/phillipi-logo.png);
   background-position: center;
   background-repeat: no-repeat;
   position: absolute;
@@ -987,7 +989,7 @@ img {
     transition: all 0.3s ease-in-out; }
 
 .large-window {
-  padding-top: 100%;
+  padding-top: 80%;
   background-image: url(../images/model2.jpg);
   background-position: center 0px;
   background-repeat: repeat-y;
@@ -1080,7 +1082,7 @@ footer {
   background: #e6e6e6;
   color: black;
   padding: 40px 0;
-  position: fixed;
+  position: inherit;
   bottom: 0;
   width: 100%; }
   footer .footer-stuff {

@@ -63,10 +63,11 @@ img {
 .bird-box {
   position: relative;
   height: 600px;
-  background-image: url(../images/bird-bg.jpg);
+  background-color: #f5ffb4;
+  background-image: url(../images/banner.png);
+  background-repeat: no-repeat;
   background-size: auto 600px;
-  background-position: top center;
-  background-attachment: fixed;
+  background-position: left;
   overflow: hidden;
   z-index: 3; }
 
@@ -197,6 +198,7 @@ img {
 #apps-section {
   margin-top: 20px; }
   #apps-section .post {
+    margin-top: 10px;
     border: 1px solid #e1e1e1;
     padding: 20px 20px 0;
     background: white;

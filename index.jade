@@ -14,9 +14,9 @@ html(lang="en")
 
     body
         header.bird-box
-            .back-bird
+            //- .back-bird
             .logo
-            .fore-bird
+            //- .fore-bird
 
         section.content.row
 
@@ -26,29 +26,31 @@ html(lang="en")
 
                 //- .side-menu
                 //-     ul
-                //-         li: a(id="a-unique" href="#unique") 
-                //-             button(type="button" id="button-unique" class="btn btn-default btn-circle tooltipped" data-position="left" data-delay="50" data-tooltip="Unique Style")
-                //-         li: a(id="a-fine" href="#fine")
-                //-             button(type="button" id="button-fine" class="btn btn-default btn-circle tooltipped" data-position="left" data-delay="50" data-tooltip="Fine Tayloring")
+                //-         li: a(id="a-about" href="#about") 
+                //-             button(type="button" id="button-about" class="btn btn-default btn-circle tooltipped" data-position="left" data-delay="50" data-tooltip="Sobre")
+                //-         li: a(id="a-games-title" href="#games-title")
+                //-             button(type="button" id="button-games-title" class="btn btn-default btn-circle tooltipped" data-position="left" data-delay="50" data-tooltip="Jogos Desenvolvidos")
                 //-         li: a(id="a-rich" href="#rich")
                 //-             button(type="button" id="button-rich" class="btn btn-default btn-circle tooltipped" data-position="left" data-delay="50" data-tooltip="Rich History")
 
                 div.centro.center-align.col.s12.m8
 
+                    //- .row
+
+                    //-     .col.s12
+                    //-         h2(id="about" class="section scrollspy") Sobre
+
+                    //-         //- hr
+
+                    //-         p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+                    //-         p Formado em 2015 na FATEC Carapicuíba no curso de Jogos Digitais, .
+
+                    //-         hr
+
                     .row
-
                         .col.s12
-                            h2(id="unique" class="section scrollspy") Sobre
-
-                            //- hr
-
-                            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-                            hr
-
-                    .row
-                        .col.s12
-                            h2(id="fine" class="section scrollspy") Jogos Desenvolvidos
+                            h2(id="games-title" class="section scrollspy") Jogos Desenvolvidos
 
                     #games-section
                         .row.img-row.center-align.col.s12
@@ -63,7 +65,7 @@ html(lang="en")
 
                     h1(id="fine" class="section scrollspy") Android Apps
 
-                    #apps-section.row
+                    div#apps-section.row
 
                         .post.col.s12.m12.l3.offset-l1(v-for="app in apps")
                             .row
@@ -81,21 +83,21 @@ html(lang="en")
 
                     hr
 
-                    .row
-                        .large-window.col.l8.offset-l2
-                            .window-tint
-                                .promo-text Fall Suits
-                                    strong <span>from</span> $99
-                                    a(href="").window-cta Shop Now
+                    //- .row
+                    //-     .large-window
+                    //-         .window-tint
+                    //-             .promo-text Fall Suits
+                    //-                 strong <span>from</span> $99
+                    //-                 a(href="").window-cta Shop Now
                         
 
-                    h1(id="rich" class="section scrollspy") Rich History
+                    h1(id="rich" class="section scrollspy") Artes
 
-                    hr
+                    //- hr
 
-                    p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    //- p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
-                    hr
+                    //- hr
 
                     .blog-posts.row
 
@@ -192,7 +194,7 @@ html(lang="en")
                 //-         li: a(href="") Auburn Abbot
 
                 .columns.six
-                    p <strong>Sign Up for the newsletter</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    p <strong>Email</strong>
 
                     form.row
                         .columns.twelve
@@ -295,17 +297,17 @@ html(lang="en")
                   }
             });
 
-            const app5 = new Vue({
-                el: '#apps-section',
-                template: '#demo-template',
-                data: {
-                    selected: 2,
-                    options: [
-                      { id: 1, text: 'Hello' },
-                      { id: 2, text: 'World' }
-                    ]
-                  }
-            });
+            //- const app5 = new Vue({
+            //-     el: '#apps-section',
+            //-     template: '#demo-template',
+            //-     data: {
+            //-         selected: 2,
+            //-         options: [
+            //-           { id: 1, text: 'Hello' },
+            //-           { id: 2, text: 'World' }
+            //-         ]
+            //-       }
+            //- });
 
         script(src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous")
         script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous")

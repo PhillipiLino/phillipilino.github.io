@@ -103,6 +103,37 @@ $(window).scroll(function() {
 			'transform' : 'translate(0px, '+ wScroll / 40+'%)'
 	});
 
+	if(wScroll > $('.avatar').offset().top - $(window).height() + 600
+                && wScroll < $('.avatar').offset().top - $(window).height() + 700){
+
+	       $('.avatar1').css({'opacity': '0'})
+	       $('.avatar2').css({'opacity': '1'})
+	       $('.avatar3').css({'opacity': '0'})
+	       $('.avatar4').css({'opacity': '0'})
+
+	} else if(wScroll > $('.avatar').offset().top - $(window).height() + 700
+	        && wScroll < $('.avatar').offset().top - $(window).height() + 800){
+
+	       $('.avatar1').css({'opacity': '0'})
+	       $('.avatar2').css({'opacity': '0'})
+	       $('.avatar3').css({'opacity': '1'})
+	       $('.avatar4').css({'opacity': '0'})
+
+	} else if(wScroll > $('.avatar').offset().top - $(window).height() + 800){
+
+	       $('.avatar1').css({'opacity': '0'})
+	       $('.avatar2').css({'opacity': '0'})
+	       $('.avatar3').css({'opacity': '0'})
+	       $('.avatar4').css({'opacity': '1'})
+
+	} else {
+	       
+	       $('.avatar1').css({'opacity': '1'})
+	       $('.avatar2').css({'opacity': '0'})
+	       $('.avatar3').css({'opacity': '0'})
+	       $('.avatar4').css({'opacity': '0'})
+	}
+
 	// if(wScroll >= $('#unique').offset().top - $(window).height() && wScroll < $('#fine').offset().top - $(window).height()){
 	// 	$("#button-unique").css({"background-color" : "gray"});
 	// 	$("#button-fine").css({"background-color" : "black"});

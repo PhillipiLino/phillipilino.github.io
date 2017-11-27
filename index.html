@@ -119,7 +119,12 @@
           </vue-instagram>
           
         </script>
-        <div class="avatar"></div>
+        <div class="avatar row">
+          <div class="avatar1 col s8 m8 l8"></div>
+          <div class="avatar2 col s8 m8 l8"></div>
+          <div class="avatar3 col s8 m8 l8"></div>
+          <div class="avatar4 col s8 m8 l8"></div>
+        </div>
       </div>
       <div id="code-side-right" class="code-side col m2 hide-on-small-only"><img v-for="item in items" v-bind:src="item.path" v-bind:blur="item.blur" v-bind:size="item.size" class="code-images"></div>
     </section>
